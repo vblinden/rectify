@@ -1,0 +1,66 @@
+{
+  "name": "rectify",
+  "displayName": "Rectify",
+  "description": "Format your file with (multiple) formatters per language.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Formatters"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "rectify.formatDocument",
+        "title": "Rectify: Format document"
+      },
+      {
+        "command": "rectify.toggleDebug",
+        "title": "Rectify: Toggle debug mode"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Rectify configuration",
+      "properties": {
+        "rectify.formatters": {
+          "type": "object",
+          "default": {},
+          "description": "Map languageId to array of formatter CLI tools and options.",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "formatters": {
+                "type": "array",
+                "items": { "type": "string" },
+                "description": "List of CLI formatters to run for this language."
+              },
+              "stop_after_first": {
+                "type": "boolean",
+                "default": true,
+                "description": "Stop after first successful formatter."
+              }
+            },
+            "required": ["formatters"]
+          }
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.100.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "eslint": "^9.25.1",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
