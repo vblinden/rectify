@@ -14,7 +14,14 @@
   "categories": [
     "Formatters"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onLanguage:php",
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "onLanguage:json",
+    "onLanguage:typescriptreact",
+    "onLanguage:javascriptreact"
+  ],
   "main": "./extension.js",
   "contributes": {
     "commands": [
@@ -53,7 +60,15 @@
           }
         }
       }
-    }
+    },
+    "languages": [
+      { "id": "php", "aliases": ["PHP"], "extensions": [".php"] },
+      { "id": "javascript", "aliases": ["JavaScript"], "extensions": [".js"] },
+      { "id": "typescript", "aliases": ["TypeScript"], "extensions": [".ts"] },
+      { "id": "json", "aliases": ["JSON"], "extensions": [".json"] },
+      { "id": "typescriptreact", "aliases": ["TypeScript React"], "extensions": [".tsx"] },
+      { "id": "javascriptreact", "aliases": ["JavaScript React"], "extensions": [".jsx"] }
+    ]
   },
   "scripts": {
     "lint": "eslint .",
