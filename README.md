@@ -1,6 +1,6 @@
 # Rectify
 
-Rectify is a VS Code extension that lets you format your files using a configurable sequence of CLI formatters per language. It supports both stdin-based and temp-file-based formatters, and is designed to minimize editor flicker and preserve unsaved changes.
+Rectify is a VS Code extension that lets you format your files using a configurable sequence of CLI formatters per language. It supports both stdin-based and temp-file-based formatters, and is designed to minimize editor flicker and preserve unsaved changes. This plugin is heavily inspired by [conform.nvim](https://github.com/stevearc/conform.nvim).
 
 ## Features
 
@@ -60,8 +60,3 @@ This extension contributes the following settings:
 
 - Formatters must be installed and available in your PATH or project directories.
 - Some formatters may not support stdin or temp files as expected; see debug output for troubleshooting.
-
-## Release Notes
-
-### 0.0.1
-- Initial release: multi-formatter support, temp file and stdin handling, debug mode, atomic formatting.
