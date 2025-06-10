@@ -8,6 +8,7 @@
     "url": "https://github.com/vblinden/rectify"
   },
   "publisher": "vblinden",
+  "icon": "images/logo.png",
   "engines": {
     "vscode": "^1.100.0"
   },
