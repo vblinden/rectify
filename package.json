@@ -2,7 +2,7 @@
   "name": "rectify",
   "displayName": "Rectify",
   "description": "Format your file with (multiple) formatters per language.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "repository": {
     "type": "git",
     "url": "https://github.com/vblinden/rectify"
@@ -19,9 +19,9 @@
     "onLanguage:php",
     "onLanguage:javascript",
     "onLanguage:typescript",
-    "onLanguage:json",
     "onLanguage:typescriptreact",
-    "onLanguage:javascriptreact"
+    "onLanguage:javascriptreact",
+    "onLanguage:json"
   ],
   "main": "./extension.js",
   "contributes": {
