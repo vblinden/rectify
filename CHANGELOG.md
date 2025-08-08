@@ -11,7 +11,7 @@ All notable changes to this project will be documented in this file.
 ### Changed
 
 - Pin VS Code type definitions to `@types/vscode@1.83.0`
-- Broaden `engines.vscode` to `>=1.70.0 <2.0.0` for wider compatibility
+ - Set `engines.vscode` to `^1.83.0` to match the bundled `@types/vscode`
 
 ## [0.0.4] - 2025-07-29
 

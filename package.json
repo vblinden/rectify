@@ -2,7 +2,7 @@
     "name": "rectify",
     "displayName": "Rectify",
     "description": "Format your file with (multiple) formatters per language.",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "repository": {
         "type": "git",
         "url": "https://github.com/vblinden/rectify"
@@ -10,7 +10,7 @@
     "publisher": "vblinden",
     "icon": "images/logo.png",
     "engines": {
-        "vscode": "1.83.0"
+        "vscode": "^1.83.0"
     },
     "categories": [
         "Formatters"
