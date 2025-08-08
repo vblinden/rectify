@@ -1,87 +1,139 @@
 {
-  "name": "rectify",
-  "displayName": "Rectify",
-  "description": "Format your file with (multiple) formatters per language.",
-  "version": "0.0.4",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/vblinden/rectify"
-  },
-  "publisher": "vblinden",
-  "icon": "images/logo.png",
-  "engines": {
-    "vscode": "^1.100.0"
-  },
-  "categories": [
-    "Formatters"
-  ],
-  "activationEvents": [
-    "onLanguage:php",
-    "onLanguage:javascript",
-    "onLanguage:typescript",
-    "onLanguage:typescriptreact",
-    "onLanguage:javascriptreact",
-    "onLanguage:json"
-  ],
-  "main": "./extension.js",
-  "contributes": {
-    "commands": [
-      {
-        "command": "rectify.formatDocument",
-        "title": "Rectify: Format document"
-      },
-      {
-        "command": "rectify.toggleDebug",
-        "title": "Rectify: Toggle debug mode"
-      }
-    ],
-    "configuration": {
-      "type": "object",
-      "title": "Rectify configuration",
-      "properties": {
-        "rectify.formatters": {
-          "type": "object",
-          "default": {},
-          "description": "Map languageId to array of formatter CLI tools and options.",
-          "additionalProperties": {
-            "type": "object",
-            "properties": {
-              "formatters": {
-                "type": "array",
-                "items": { "type": "string" },
-                "description": "List of CLI formatters to run for this language."
-              },
-              "stop_after_first": {
-                "type": "boolean",
-                "default": true,
-                "description": "Stop after first successful formatter."
-              }
-            },
-            "required": ["formatters"]
-          }
-        }
-      }
+    "name": "rectify",
+    "displayName": "Rectify",
+    "description": "Format your file with (multiple) formatters per language.",
+    "version": "0.0.4",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vblinden/rectify"
     },
-    "languages": [
-      { "id": "php", "aliases": ["PHP"], "extensions": [".php"] },
-      { "id": "javascript", "aliases": ["JavaScript"], "extensions": [".js"] },
-      { "id": "typescript", "aliases": ["TypeScript"], "extensions": [".ts"] },
-      { "id": "json", "aliases": ["JSON"], "extensions": [".json"] },
-      { "id": "typescriptreact", "aliases": ["TypeScript React"], "extensions": [".tsx"] },
-      { "id": "javascriptreact", "aliases": ["JavaScript React"], "extensions": [".jsx"] }
-    ]
-  },
-  "scripts": {
-    "lint": "eslint .",
-    "pretest": "npm run lint",
-    "test": "vscode-test"
-  },
-  "devDependencies": {
-    "@types/vscode": "^1.100.0",
-    "@types/mocha": "^10.0.10",
-    "@types/node": "20.x",
-    "eslint": "^9.25.1",
-    "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.5.2"
-  }
+    "publisher": "vblinden",
+    "icon": "images/logo.png",
+    "engines": {
+        "vscode": ">=1.70.0 <2.0.0"
+    },
+    "categories": [
+        "Formatters"
+    ],
+    "activationEvents": [
+        "onLanguage:php",
+        "onLanguage:javascript",
+        "onLanguage:typescript",
+        "onLanguage:typescriptreact",
+        "onLanguage:javascriptreact",
+        "onLanguage:json"
+    ],
+    "main": "./extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "rectify.formatDocument",
+                "title": "Rectify: Format document"
+            },
+            {
+                "command": "rectify.toggleDebug",
+                "title": "Rectify: Toggle debug mode"
+            }
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "Rectify configuration",
+            "properties": {
+                "rectify.formatters": {
+                    "type": "object",
+                    "default": {},
+                    "description": "Map languageId to array of formatter CLI tools and options.",
+                    "additionalProperties": {
+                        "type": "object",
+                        "properties": {
+                            "formatters": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "description": "List of CLI formatters to run for this language."
+                            },
+                            "stop_after_first": {
+                                "type": "boolean",
+                                "default": true,
+                                "description": "Stop after first successful formatter."
+                            }
+                        },
+                        "required": [
+                            "formatters"
+                        ]
+                    }
+                }
+            }
+        },
+        "languages": [
+            {
+                "id": "php",
+                "aliases": [
+                    "PHP"
+                ],
+                "extensions": [
+                    ".php"
+                ]
+            },
+            {
+                "id": "javascript",
+                "aliases": [
+                    "JavaScript"
+                ],
+                "extensions": [
+                    ".js"
+                ]
+            },
+            {
+                "id": "typescript",
+                "aliases": [
+                    "TypeScript"
+                ],
+                "extensions": [
+                    ".ts"
+                ]
+            },
+            {
+                "id": "json",
+                "aliases": [
+                    "JSON"
+                ],
+                "extensions": [
+                    ".json"
+                ]
+            },
+            {
+                "id": "typescriptreact",
+                "aliases": [
+                    "TypeScript React"
+                ],
+                "extensions": [
+                    ".tsx"
+                ]
+            },
+            {
+                "id": "javascriptreact",
+                "aliases": [
+                    "JavaScript React"
+                ],
+                "extensions": [
+                    ".jsx"
+                ]
+            }
+        ]
+    },
+    "scripts": {
+        "lint": "eslint .",
+        "pretest": "npm run lint",
+        "test": "vscode-test"
+    },
+    "devDependencies": {
+        "@types/vscode": "1.83.0",
+        "@types/mocha": "^10.0.10",
+        "@types/node": "20.x",
+        "eslint": "^9.25.1",
+        "@vscode/test-cli": "^0.0.10",
+        "@vscode/test-electron": "^2.5.2"
+    }
 }

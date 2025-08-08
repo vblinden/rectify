@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0] - 2025-08-08
+
+### Added
+
+- Support for Cursor by broadening VS Code engine compatibility
+
+### Changed
+
+- Pin VS Code type definitions to `@types/vscode@1.83.0`
+- Broaden `engines.vscode` to `>=1.70.0 <2.0.0` for wider compatibility
+
 ## [0.0.4] - 2025-07-29
 
 ### Fixed
