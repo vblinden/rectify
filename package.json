@@ -2,7 +2,7 @@
     "name": "rectify",
     "displayName": "Rectify",
     "description": "Format your file with (multiple) formatters per language.",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "repository": {
         "type": "git",
         "url": "https://github.com/vblinden/rectify"

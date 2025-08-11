@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.3] - 2025-01-27
+
+### Fixed
+
+- **Format-on-Save Functionality**: Restored format-on-save functionality that was broken in v1.0.2
+  - Added language-specific formatter registrations for all supported languages
+  - Ensures VS Code properly recognizes Rectify as a formatter for format-on-save
+  - Maintains single menu entry while preserving full functionality
+
 ## [1.0.2] - 2025-01-27
 
 ### Fixed
