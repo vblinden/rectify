@@ -483,11 +483,27 @@ function activate(context) {
         createFormattingEditProvider(() => debugMode)
     );
 
+    // Register language-specific formatter providers to ensure format-on-save works
+    const languageSpecificProviders = [
+        "php",
+        "javascript", 
+        "typescript",
+        "typescriptreact",
+        "javascriptreact",
+        "json"
+    ].map(language => 
+        vscode.languages.registerDocumentFormattingEditProvider(
+            { scheme: "file", language },
+            createFormattingEditProvider(() => debugMode)
+        )
+    );
+
     // Add all disposables to context
     context.subscriptions.push(
         debugDisposable,
         formatDisposable,
-        formattingProvider
+        formattingProvider,
+        ...languageSpecificProviders
     );
 }
 
