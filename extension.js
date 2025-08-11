@@ -477,14 +477,9 @@ function activate(context) {
         createFormatDocumentHandler(() => debugMode)
     );
 
-    // Register formatting edit providers
-    const fileFormattingProvider = vscode.languages.registerDocumentFormattingEditProvider(
+    // Register formatting edit provider for all file types
+    const formattingProvider = vscode.languages.registerDocumentFormattingEditProvider(
         { scheme: "file" },
-        createFormattingEditProvider(() => debugMode)
-    );
-
-    const allLanguagesFormattingProvider = vscode.languages.registerDocumentFormattingEditProvider(
-        { scheme: "file", language: "*" },
         createFormattingEditProvider(() => debugMode)
     );
 
@@ -492,8 +487,7 @@ function activate(context) {
     context.subscriptions.push(
         debugDisposable,
         formatDisposable,
-        fileFormattingProvider,
-        allLanguagesFormattingProvider
+        formattingProvider
     );
 }
 

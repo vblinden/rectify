@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.2] - 2025-01-27
+
+### Fixed
+
+- **Duplicate Formatter Entries**: Fixed issue where Rectify appeared twice in the "Format document with..." menu
+  - Removed duplicate document formatting edit provider registration
+  - Consolidated formatter registration to use single provider for all file types
+  - Maintains full functionality while eliminating duplicate menu entries
+
 ## [1.0.0] - 2025-08-08
 
 ### Added
